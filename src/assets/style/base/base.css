@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background-color: #e6f5fe;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  margin: 0;
+}

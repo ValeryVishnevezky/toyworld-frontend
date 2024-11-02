@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
+import '../src/assets/style/main.css'
 import { HomePage } from "./pages/HomePage.jsx";
 import { AboutUs } from "./pages/AboutUs.jsx";
 import { ToyIndex } from "./pages/ToyIndex.jsx";
