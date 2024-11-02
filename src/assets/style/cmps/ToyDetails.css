@@ -1,0 +1,48 @@
+.toy-details {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.toy-details-info {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.toy-details-info img {
+  width: 200px;
+}
+
+.toy-details h1 {
+  margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.toy-details button {
+  align-self: start;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  background-color: #374fb2;
+}
+
+.toy-details button:hover {
+  color: #131c3f;
+  background-color: #01337569;
+}

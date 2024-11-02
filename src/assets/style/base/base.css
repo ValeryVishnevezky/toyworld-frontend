@@ -66,6 +66,6 @@ input:focus{
 }
 
 .loader{
-  width: 150px;
-  margin: 50px 0;
+  width: 100px;
+  margin: 150px 0;
 }

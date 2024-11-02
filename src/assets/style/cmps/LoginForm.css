@@ -20,8 +20,14 @@
 }
 
 .login-form button {
+  cursor: pointer;
   padding: 6px;
   border: none;
   border-radius: 0.2rem;
   background-color: #e6f5fe;
+}
+
+.login-form button:hover {
+  color: white;
+  background-color: #131c3f;
 }

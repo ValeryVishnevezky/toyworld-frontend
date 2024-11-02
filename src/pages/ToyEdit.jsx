@@ -30,7 +30,7 @@ export function ToyEdit() {
 
     function onSaveToy(ev) {
         ev.preventDefault()
-        if (!toyToEdit.price) toyToEdit.price = 1000
+        if (!toyToEdit.price) toyToEdit.price = 100
         toyAction.saveToy(toyToEdit)
             .then(() => {
                 showSuccessMsg('Toy Saved!')
@@ -46,7 +46,8 @@ export function ToyEdit() {
         <section className="toy-edit">
             <h2>{toyToEdit._id ? 'Edit' : 'Add'} Toy</h2>
 
-            <form onSubmit={onSaveToy} >
+            <form className="toy-edit-form" onSubmit={onSaveToy} >
+                <div className="toy-edit-form-inputs">
                 <label htmlFor="title">Title: </label>
                 <input type="text"
                     name="title"
@@ -55,6 +56,9 @@ export function ToyEdit() {
                     value={toyToEdit.title}
                     onChange={handleChange}
                 />
+                </div>
+
+                <div className="toy-edit-form-inputs">
                 <label htmlFor="price">Price: </label>
                 <input type="number"
                     name="price"
@@ -63,6 +67,9 @@ export function ToyEdit() {
                     value={toyToEdit.price}
                     onChange={handleChange}
                 />
+                </div>
+
+                <div className="toy-edit-form-inputs">
                 <label htmlFor="desc">Description: </label>
                 <input type="text"
                     name="desc"
@@ -71,9 +78,11 @@ export function ToyEdit() {
                     value={toyToEdit.desc}
                     onChange={handleChange}
                 />
+                </div>
+
                 <div>
-                    <button>{toyToEdit._id ? 'Save' : 'Add'}</button>
-                    <Link to="/toy">Cancel</Link>
+                    <button className="toy-edit-btn">{toyToEdit._id ? 'Save' : 'Add'}</button>
+                    <Link className="toy-edit-btn" to="/toy">Cancel</Link>
                 </div>
             </form>
         </section>

@@ -4,6 +4,7 @@ export const SET_TOYS = 'SET_TOYS'
 export const REMOVE_TOY = 'REMOVE_TOY'
 export const ADD_TOY = 'ADD_TOY'
 export const UPDATE_TOY = 'UPDATE_TOY'
+export const UNDO_TOY = 'UNDO_TOY'
 
 export const SET_FILTER_BY = 'SET_FILTER_BY'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
@@ -36,6 +37,9 @@ export function toyReducer(state = initialState, action = {}) {
                 ...state,
                 toys: state.toys.map(toy => toy._id === action.toy._id ? action.toy : toy)
             }
+        case UNDO_TOY:
+            return { ...state, toys: [...state.lastToys] }
+
         case SET_FILTER_BY:
             return {
                 ...state,

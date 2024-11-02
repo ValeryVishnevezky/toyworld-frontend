@@ -35,9 +35,9 @@ export function AppHeader() {
             </section>
           )}
           <nav className="app-nav">
-            <NavLink activeClassName="active" to="/">Home</NavLink>
-            <NavLink activeClassName="active" to="/toy">Toys</NavLink>
-            <NavLink activeClassName="active" to="/about">About</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/">Home</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/toy">Toys</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/about">About</NavLink>
           </nav>
         </section>
       </section>

@@ -8,7 +8,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 
 export function ToyIndex() {
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const isLoading = useSelector(storeState => storeState.toyModule.isLoading)
@@ -25,7 +25,7 @@ export function ToyIndex() {
     }
 
     function onRemoveToy(toyId) {
-        removeCarOptimistic(toyId)
+        toyAction.removeToy(toyId)
             .then(() => {
                 showSuccessMsg('Toy removed')
             })

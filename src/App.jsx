@@ -7,7 +7,7 @@ import { ToyIndex } from "./pages/ToyIndex.jsx";
 import { ToyEdit } from "./pages/ToyEdit.jsx";
 import { AppHeader } from "./cmps/AppHeader.jsx";
 import { AppFooter } from "./cmps/AppFooter.jsx";
-// import { ToyDetails } from "./pages/ToyDetails.jsx";
+import { ToyDetails } from "./pages/ToyDetails.jsx";
 import { store } from "./store/store.js";
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
               <Route element={<AboutUs />} path="/about" />
               <Route element={<ToyIndex />} path="/toy" />
               <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
-              {/* <Route element={<ToyDetails />} path="/toy/:toyId" /> */}
+              <Route element={<ToyDetails />} path="/toy/:toyId" />
             </Routes>
           </main>
           <AppFooter />
