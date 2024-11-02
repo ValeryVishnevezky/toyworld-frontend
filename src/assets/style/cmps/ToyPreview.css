@@ -1,0 +1,36 @@
+.toy-preview-info img {
+  width: 150px;
+}
+
+.toy-preview-info h4 {
+  margin: 10px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #374fb2;
+}
+
+.toy-preview-info p {
+  margin: 5px 0;
+  color: #131c3f;
+}
+
+.toy-preview-delete {
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 5px;
+  border: none;
+  color: #131c3fb5;
+  background-color: transparent;
+}
+
+.toy-preview-link {
+  margin-top: 5px;
+  padding: 5px;
+  color: #131c3f;
+}
+
+.toy-preview-delete:hover,
+.toy-preview-link:hover {
+  border-radius: 0.2rem;
+  background-color: #3750b235;
+}

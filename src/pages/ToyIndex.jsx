@@ -34,32 +34,16 @@ export function ToyIndex() {
             })
     }
 
-    function onEditToy(toy) {
-        const price = +prompt('New price?')
-        const toyToSave = { ...toy, price }
-
-        saveToy(toyToSave)
-            .then((savedToy) => {
-                showSuccessMsg(`Toy updated to price: $${savedToy.price}`)
-            })
-            .catch(err => {
-                showErrorMsg('Cannot update toy')
-            })
-    }
-
     return (
         <div>
-            <h3>Our toys</h3>
             <main>
-                <Link to="/toy/edit">Add Toy</Link>
                 <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
                 {!isLoading
                     ? <ToyList
                     toys={toys}
                     onRemoveToy={onRemoveToy}
-                    onEditToy={onEditToy}
                     />
-                    : <div>Loading...</div>
+                    : <div className="loader-box"><img className="loader" src="/src/assets/svg/loader.svg" alt="loader"></img></div>
                 }
                 <hr />
             </main>

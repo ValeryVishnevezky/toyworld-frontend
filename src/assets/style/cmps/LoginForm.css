@@ -8,17 +8,20 @@
   margin-bottom: 5px;
 }
 
-.login-form input{
-    padding: 6px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 0.2rem;
-    background-color: #e6f5fe;
+.login-form input {
+  padding: 6px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 0.2rem;
 }
 
-.login-form button{
-    padding: 6px;
-    border: none;
-    border-radius: 0.2rem;
-    background-color: #e6f5fe;
+.login-form input:focus {
+  background-color: #e6f5fe;
+}
+
+.login-form button {
+  padding: 6px;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #e6f5fe;
 }

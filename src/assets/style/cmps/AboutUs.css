@@ -1,0 +1,87 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 20px;
+  text-align: center;
+}
+
+.about-valery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: auto;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 0 5px 1px #3750b255;
+}
+
+.about-valery img {
+  width: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-valery h1 {
+  color: #d9d057;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.about-valery h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+}
+
+.about-valery p {
+  font-size: 1.3rem;
+  letter-spacing: 0.04rem;
+  max-width: 80%;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 850px) {
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px;
+    text-align: center;
+  }
+
+  .about-valery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px 1px rgba(123, 218, 255, 0.933);
+  }
+
+  .about-valery h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .about-valery h2 {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    margin-bottom: 20px;
+  }
+
+  .about-valery p {
+    font-size: 1.2rem;
+    letter-spacing: 0.04rem;
+    max-width: 90%;
+    margin-bottom: 5px;
+  }
+}

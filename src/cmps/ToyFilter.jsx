@@ -1,6 +1,7 @@
 // const { useState, useEffect, useRef } = React
 
 import { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom'
 import { utilService } from "../services/util.service.js";
 
 export function ToyFilter({ filterBy, onSetFilter }) {
@@ -20,8 +21,8 @@ export function ToyFilter({ filterBy, onSetFilter }) {
   return (
     <section className="toy-filter">
       <h2>Toys Filter</h2>
+      <div className="toy-filter-inputs-btn">
       <form>
-        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"
@@ -31,7 +32,6 @@ export function ToyFilter({ filterBy, onSetFilter }) {
           onChange={handleChange}
         />
 
-        <label htmlFor="maxPrice">Max price:</label>
         <input
           type="number"
           id="maxPrice"
@@ -41,7 +41,6 @@ export function ToyFilter({ filterBy, onSetFilter }) {
           onChange={handleChange}
         />
 
-        <label htmlFor="desc">Description:</label>
         <input
           type="text"
           id="desc"
@@ -51,6 +50,8 @@ export function ToyFilter({ filterBy, onSetFilter }) {
           onChange={handleChange}
         />
       </form>
+      <Link className="toy-filter-btn" to="/toy/edit">Add Toy</Link>
+      </div>
     </section>
   );
 }
