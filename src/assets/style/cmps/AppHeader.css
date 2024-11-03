@@ -38,13 +38,13 @@
 .app-nav a:hover {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  background-color: #2b3687;
+  background-color: #002476;
 }
 
 .app-nav a.active {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  background-color: #2b3687;
+  background-color: #fdb742;
 }
 
 .app-nav a:first-child {
@@ -52,6 +52,27 @@
 }
 
 .app-header img {
-  width: 120px;
+  width: 230px;
   align-self: center;
+}
+
+.header-container-right-hello{
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.header-container-right-logout{
+  cursor: pointer;
+  padding: 8px 6px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  background-color: #fdb742;
+}
+
+.header-container-right-logout:hover {
+  color: white;
+  background-color: #002476;
 }

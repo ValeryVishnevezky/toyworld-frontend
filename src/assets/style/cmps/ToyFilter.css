@@ -24,8 +24,13 @@
   border-radius: 0.2rem;
   font-weight: 400;
   color: white;
-  background-color: #3750b255;
+  background-color: #fdb742;
 }
+
+.toy-filter-btn:hover {
+  background-color: #002476;
+}
+
 .toy-filter-inputs-btn select {
   font-family: "Lato", sans-serif;
   font-weight: 300;

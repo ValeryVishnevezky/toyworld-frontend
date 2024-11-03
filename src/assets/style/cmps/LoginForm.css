@@ -24,10 +24,11 @@
   padding: 6px;
   border: none;
   border-radius: 0.2rem;
-  background-color: #e6f5fe;
+  color: white;
+  background-color: #fdb742;
 }
 
 .login-form button:hover {
   color: white;
-  background-color: #131c3f;
+  background-color: #002476;
 }

@@ -1,4 +1,8 @@
-.login-page{
-    text-align: right;
-    letter-spacing: 0.05rem;
+.login-page {
+  text-align: right;
+  letter-spacing: 0.05rem;
+}
+
+.login-page a:hover {
+  color: #fdb742;
 }

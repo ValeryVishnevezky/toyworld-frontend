@@ -26,8 +26,8 @@ export function AppHeader() {
         <section className="header-container-right">
           {user ? (
             <section className="header-container-user">
-              <span to={`/user/${user._id}`}>Hello {user.fullname}</span>
-              <button onClick={onLogout}>Logout</button>
+              <span className="header-container-right-hello" to={`/user/${user._id}`}>Hello {user.fullname}</span>
+              <button className="header-container-right-logout" onClick={onLogout}>Logout</button>
             </section>
           ) : (
             <section className="header-container-user">
