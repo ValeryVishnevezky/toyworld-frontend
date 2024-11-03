@@ -1,6 +1,6 @@
-import { httpService } from './http.service.js'
+import { storageService } from './async-storage.service.js'
 
-const BASE_URL = 'auth/'
+const STORAGE_KEY = 'userDB'
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
 
 export const userService = {
@@ -13,33 +13,29 @@ export const userService = {
 }
 
 
+function getById(userId) {
+    return storageService.get(STORAGE_KEY, userId)
+}
+
 function login({ username, password }) {
-    return httpService.post(BASE_URL + 'login', { username, password })
-        .then(user => {
+    return storageService.query(STORAGE_KEY)
+        .then(users => {
+            const user = users.find(user => user.username === username)
+            // if (user && user.password !== password) return _setLoggedinUser(user)
             if (user) return _setLoggedinUser(user)
             else return Promise.reject('Invalid login')
         })
 }
 
 function signup({ username, password, fullname }) {
-    const user = { username, password, fullname, score: 10000 }
-    return httpService.post(BASE_URL + 'signup', user)
-        .then(user => {
-            if (user) return _setLoggedinUser(user)
-            else return Promise.reject('Invalid signup')
-        })
+    const user = { username, password, fullname }
+    return storageService.post(STORAGE_KEY, user)
+        .then(_setLoggedinUser)
 }
-
 
 function logout() {
-    return httpService.post(BASE_URL + 'logout')
-        .then(() => {
-            sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN)
-        })
-}
-
-function getById(userId) {
-    return httpService.get('user/' + userId)
+    sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN)
+    return Promise.resolve()
 }
 
 function getLoggedinUser() {
@@ -47,10 +43,11 @@ function getLoggedinUser() {
 }
 
 function _setLoggedinUser(user) {
-    const userToSave = { _id: user._id, fullname: user.fullname, score: user.score }
+    const userToSave = { _id: user._id, fullname: user.fullname }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(userToSave))
     return userToSave
 }
+
 
 function getEmptyCredentials() {
     return {
@@ -59,5 +56,6 @@ function getEmptyCredentials() {
         fullname: ''
     }
 }
+
 
 
