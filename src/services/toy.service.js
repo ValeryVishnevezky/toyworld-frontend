@@ -50,8 +50,8 @@ function getEmptyToy() {
     return {
         title: '',
         price: '',
-        labels: '',
-        inStock: ''
+        labels: [],
+        inStock: false
     }
 }
 

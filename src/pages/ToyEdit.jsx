@@ -27,6 +27,7 @@ export function ToyEdit() {
   function handleChange({ target }) {
     let { value, type, name: field } = target;
     value = type === "number" ? +value : value;
+    value = type === "checkbox" ? target.checked : value;
     setToyToEdit((prevToy) => ({ ...prevToy, [field]: value }));
   }
 
@@ -46,6 +47,7 @@ export function ToyEdit() {
   function onSaveToy(ev) {
     ev.preventDefault();
     if (!toyToEdit.price) toyToEdit.price = 100;
+    console.log('Toy to save:', toyToEdit);
     toyAction
       .saveToy(toyToEdit)
       .then(() => {
@@ -58,7 +60,7 @@ export function ToyEdit() {
       });
   }
 
-  const { title, price, labels: toyLabels } = toyToEdit;
+  const { title, price, labels: toyLabels, inStock } = toyToEdit;
 
   return (
     <section className="toy-edit">
@@ -85,6 +87,17 @@ export function ToyEdit() {
             id="price"
             placeholder="Enter price"
             value={price}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="toy-edit-form-inputs">
+          <label htmlFor="inStock">In Stock:</label>
+          <input
+            type="checkbox"
+            name="inStock"
+            id="inStock"
+            checked={!!inStock}
             onChange={handleChange}
           />
         </div>
