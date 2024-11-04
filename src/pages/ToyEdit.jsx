@@ -11,60 +11,61 @@ export function ToyEdit() {
   const labels = toyService.getToyLabels();
 
   useEffect(() => {
-    if (toyId) loadToy();
-  }, [toyId]);
+    if (toyId) loadToy()
+  }, [toyId])
 
   function loadToy() {
     toyService
       .getById(toyId)
-      .then((toy) => setToyToEdit(toy))
+      .then((toy) =>{
+        setToyToEdit(toy)
+      })
       .catch((err) => {
-        console.log("Had issues in toy edit", err);
-        navigate("/toy");
+        console.log("Had issues in toy edit", err)
+        navigate("/toy")
       });
   }
 
   function handleChange({ target }) {
-    let { value, type, name: field } = target;
-    value = type === "number" ? +value : value;
-    value = type === "checkbox" ? target.checked : value;
-    setToyToEdit((prevToy) => ({ ...prevToy, [field]: value }));
+    let { value, type, name: field } = target
+    value = type === "number" ? +value : value
+    value = type === "checkbox" ? target.checked : value
+    setToyToEdit((prevToy) => ({ ...prevToy, [field]: value}))
   }
 
   function handleLabelChange({ target }) {
-    const value = target.value;
+    const value = target.value
     setToyToEdit((prevToy) => {
-      let newLabels;
+      let newLabels
       if (prevToy.labels.includes(value)) {
-        newLabels = prevToy.labels.filter((label) => label !== value);
+        newLabels = prevToy.labels.filter((label) => label !== value)
       } else {
-        newLabels = [...prevToy.labels, value];
+        newLabels = [...prevToy.labels, value]
       }
-      return { ...prevToy, labels: newLabels };
-    });
+      return { ...prevToy, labels: newLabels }
+    })
   }
 
   function onSaveToy(ev) {
-    ev.preventDefault();
-    if (!toyToEdit.price) toyToEdit.price = 100;
-    console.log('Toy to save:', toyToEdit);
+    ev.preventDefault()
+    if (!toyToEdit.price) toyToEdit.price = 100
+    console.log('Toy to save:', toyToEdit)
     toyAction
       .saveToy(toyToEdit)
       .then(() => {
-        showSuccessMsg("Toy Saved!");
-        navigate("/toy");
+        showSuccessMsg("Toy Saved!")
+        navigate("/toy")
       })
       .catch((err) => {
-        console.log("Had issues in toy details", err);
-        showErrorMsg("Had issues in toy details");
-      });
+        console.log("Had issues in toy edit", err)
+        showErrorMsg("Had issues in toy edit")
+      })
   }
 
-  const { title, price, labels: toyLabels, inStock } = toyToEdit;
-
+  const { _id, title, price, labels: toyLabels, inStock } = toyToEdit
   return (
     <section className="toy-edit">
-      <h2>{toyToEdit._id ? "Edit" : "Add"} Toy</h2>
+      <h2>{_id ? "Edit" : "Add"} Toy</h2>
 
       <form className="toy-edit-form" onSubmit={onSaveToy}>
         <div className="toy-edit-form-inputs">
