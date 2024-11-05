@@ -1,12 +1,12 @@
 import { UserMsg } from "./UserMsg.jsx";
-import { LoginSignup } from "./LoginSignup.jsx";
+import { Link } from "react-router-dom";
+import { LoginSignup } from "../pages/LoginSignup.jsx";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js";
 import { logout } from "../store/actions/user.actions.js";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 export function AppHeader() {
-  // const dispatch = useDispatch()
   const user = useSelector((storeState) => storeState.userModule.loggedInUser);
 
   function onLogout() {
@@ -31,7 +31,7 @@ export function AppHeader() {
             </section>
           ) : (
             <section className="header-container-user">
-              <LoginSignup />
+              <Link className="login-btn" to={`/login`}>Login</Link>
             </section>
           )}
           <nav className="app-nav">

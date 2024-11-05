@@ -39,6 +39,9 @@ export function ToyDetails() {
         Toy price: <span>${toy.price}</span>
       </h1>
       <h1>
+        Toy inStock: <span>{toy.inStock ? 'yes' : 'no'}</span>
+      </h1>
+      <h1>
         Labels: <span>{toy.labels.join(' ,')}</span>
       </h1>
       <h1 className={toy.inStock ? 'green' : 'red'}>

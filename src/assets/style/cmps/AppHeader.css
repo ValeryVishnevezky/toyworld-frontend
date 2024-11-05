@@ -2,7 +2,7 @@
   height: 130px;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 15px;
   background-color: #374fb2;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .header-container-user {
-  margin-top: 10px;
+  margin-top: 20px;
   align-self: end;
 }
 
@@ -32,7 +32,7 @@
   margin-left: 15px;
   font-size: 1.3rem;
   font-weight: 500;
-  padding: 5px 25px;
+  padding: 5px 20px;
 }
 
 .app-nav a:hover {
@@ -72,7 +72,18 @@
   background-color: #fdb742;
 }
 
-.header-container-right-logout:hover {
+.login-btn{
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  background-color: #fdb742;
+}
+
+.header-container-right-logout:hover, .login-btn:hover {
   color: white;
   background-color: #002476;
 }

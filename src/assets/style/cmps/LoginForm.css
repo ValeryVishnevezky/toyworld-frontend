@@ -1,31 +1,39 @@
 .login-form {
   display: flex;
-  text-align: right;
-  justify-content: end;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-style: normal;
-  margin-bottom: 5px;
+  width: 40%;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .login-form input {
-  padding: 6px;
+  padding: 10px;
   margin: 0 5px;
   border: none;
   border-radius: 0.2rem;
-}
-
-.login-form input:focus {
-  background-color: #e6f5fe;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .login-form button {
+  align-self: end;
   cursor: pointer;
-  padding: 6px;
+  padding: 6px 10px;
   border: none;
   border-radius: 0.2rem;
+  font-size: 1.1rem;
   color: white;
   background-color: #fdb742;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .login-form button:hover {
