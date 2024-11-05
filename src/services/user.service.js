@@ -7,56 +7,49 @@ export const userService = {
     login,
     logout,
     signup,
-    getById,
+    // getById,
     getLoggedinUser,
     getEmptyCredentials
 }
 
 
-function login({ username, password }) {
-    return httpService.post(BASE_URL + 'login', { username, password })
-        .then(user => {
-            if (user) return _setLoggedinUser(user)
-            else return Promise.reject('Invalid login')
-        })
+async function login({ username, password }) {
+    const user = await httpService.post(BASE_URL + 'login', { username, password })
+    if (user) return _setLoggedinUser(user)
+    else return Promise.reject('Invalid login')
 }
 
-function signup({ username, password, fullname }) {
+async function signup({ username, password, fullname }) {
     const user = { username, password, fullname }
-    return httpService.post(BASE_URL + 'signup', user)
-        .then(user => {
-            if (user) return _setLoggedinUser(user)
-            else return Promise.reject('Invalid signup')
-        })
+    const savedUser = httpService.post(BASE_URL + 'signup', user)
+    if (savedUser) return _setLoggedinUser(savedUser)
+    else return Promise.reject('Invalid signup')
 }
 
-
-function logout() {
-    return httpService.post(BASE_URL + 'logout')
-        .then(() => {
-            sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN)
-        })
+async function logout() {
+    await httpService.post(BASE_URL + 'logout')
+    sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN)
 }
 
-function getById(userId) {
-    return httpService.get('user/' + userId)
-}
+// function getById(userId) {
+//     return httpService.get('user/' + userId)
+// }
 
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN))
 }
 
 function _setLoggedinUser(user) {
-    const userToSave = { _id: user._id, fullname: user.fullname }
-    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(userToSave))
-    return userToSave
+    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(user))
+    return user
 }
 
 function getEmptyCredentials() {
     return {
         username: '',
         password: '',
-        fullname: ''
+        fullname: '',
+        isAdmin: false
     }
 }
 

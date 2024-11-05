@@ -12,6 +12,7 @@ export function ToyIndex() {
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const isLoading = useSelector(storeState => storeState.toyModule.isLoading)
+    const user = useSelector((storeState) => storeState.userModule.loggedInUser)
 
     useEffect(() => {
         toyAction.loadToys()
@@ -37,10 +38,11 @@ export function ToyIndex() {
     return (
         <div>
             <main>
-                <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+                <ToyFilter filterBy={filterBy} user={user} onSetFilter={onSetFilter} />
                 {!isLoading
                     ? <ToyList
                     toys={toys}
+                    user={user}
                     onRemoveToy={onRemoveToy}
                     />
                     : <div className="loader-box"><img className="loader" src="/src/assets/svg/loader.svg" alt="loader"></img></div>

@@ -4,9 +4,9 @@ import { utilService } from "../services/util.service.js";
 import { toyService } from "../services/toy.service.js";
 const toyLabels = toyService.getToyLabels();
 
-export function ToyFilter({ filterBy, onSetFilter }) {
+export function ToyFilter({ filterBy, user, onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy });
-  const debouncedOnSetFilter = useRef(utilService.debounce(onSetFilter, 1000));
+  const debouncedOnSetFilter = useRef(utilService.debounce(onSetFilter, 300));
 
   useEffect(() => {
     debouncedOnSetFilter.current(filterByToEdit);
@@ -76,14 +76,13 @@ export function ToyFilter({ filterBy, onSetFilter }) {
               </div>
             ))}
           </div>
-
         </form>
       </div>
-
-          <Link className="toy-filter-btn" to="/toy/edit">
-            Add Toy
-          </Link>
-          
+      {user && user.isAdmin && (
+        <Link className="toy-filter-btn" to="/toy/edit">
+          Add Toy
+        </Link>
+      )}
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import { UserMsg } from "./UserMsg.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginSignup } from "../pages/LoginSignup.jsx";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js";
 import { logout } from "../store/actions/user.actions.js";
@@ -7,12 +7,14 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 export function AppHeader() {
+  const navigate = useNavigate();
   const user = useSelector((storeState) => storeState.userModule.loggedInUser);
 
   function onLogout() {
     logout()
       .then(() => {
         showSuccessMsg("logout successfully");
+        navigate('/')
       })
       .catch((err) => {
         showErrorMsg("OOPs try again");
