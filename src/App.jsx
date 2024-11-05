@@ -9,6 +9,7 @@ import { AppHeader } from "./cmps/AppHeader.jsx";
 import { AppFooter } from "./cmps/AppFooter.jsx";
 import { ToyDetails } from "./pages/ToyDetails.jsx";
 import { LoginSignup } from "./pages/LoginSignup.jsx";
+import { UserProfile } from "./pages/UserProfile.jsx";
 import { store } from "./store/store.js";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
               <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
               <Route element={<LoginSignup />} path="/login" />
+              <Route element={<UserProfile />} path="/user" />
             </Routes>
           </main>
           <AppFooter />

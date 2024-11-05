@@ -28,7 +28,7 @@ export function AppHeader() {
         <section className="header-container-right">
           {user ? (
             <section className="header-container-user">
-              <span className="header-container-right-hello" to={`/user/${user._id}`}>Hello {user.fullname}</span>
+              <span className="header-container-right-hello">Hello {user.fullname}</span>
               <button className="header-container-right-logout" onClick={onLogout}>Logout</button>
             </section>
           ) : (
@@ -40,6 +40,11 @@ export function AppHeader() {
             <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/">Home</NavLink>
             <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/toy">Toys</NavLink>
             <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/about">About</NavLink>
+            {user && (
+              <>
+              <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/user">Profile</NavLink>
+              </>
+            )}
           </nav>
         </section>
       </section>

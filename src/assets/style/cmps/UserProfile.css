@@ -1,0 +1,68 @@
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.user-profile-info {
+  padding: 20px 30px;
+  box-shadow: 0 0 5px 1px #3750b255;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.user-profile-names-info {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.user-profile-info h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #131c3f;
+  text-align: left;
+}
+
+.user-profile-info span {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #131c3f;
+  text-align: left;
+}
+
+.user-profile-btns {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.user-profile-info button {
+  align-self: end;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  background-color: #fdb742;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.user-profile-info button:hover {
+  color: white;
+  background-color: #002476;
+}

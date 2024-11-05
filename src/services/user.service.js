@@ -7,9 +7,10 @@ export const userService = {
     login,
     logout,
     signup,
-    // getById,
+    getById,
     getLoggedinUser,
-    getEmptyCredentials
+    getEmptyCredentials,
+    save
 }
 
 
@@ -19,9 +20,10 @@ async function login({ username, password }) {
     else return Promise.reject('Invalid login')
 }
 
-async function signup({ username, password, fullname }) {
-    const user = { username, password, fullname }
-    const savedUser = httpService.post(BASE_URL + 'signup', user)
+async function signup({ username, password, fullname, imgUrl }) {
+    const user = { username, password, fullname, imgUrl }
+    if (!user.imgUrl) user.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+    const savedUser = await httpService.post(BASE_URL + 'signup', user)
     if (savedUser) return _setLoggedinUser(savedUser)
     else return Promise.reject('Invalid signup')
 }
@@ -31,9 +33,9 @@ async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN)
 }
 
-// function getById(userId) {
-//     return httpService.get('user/' + userId)
-// }
+function getById(userId) {
+    return httpService.get('user/' + userId)
+}
 
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN))
@@ -53,4 +55,9 @@ function getEmptyCredentials() {
     }
 }
 
-
+async function save(user) {
+    const userId = user._id
+    const savedUser = await httpService.put('user/' + userId, user)
+    if (savedUser) return _setLoggedinUser(savedUser)
+    return Promise.reject('Error with updating user info')
+}

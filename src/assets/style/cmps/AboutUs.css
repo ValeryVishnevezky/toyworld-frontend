@@ -64,7 +64,7 @@
     width: auto;
     padding: 10px;
     border-radius: 1rem;
-    box-shadow: 0 0 5px 1px rgba(123, 218, 255, 0.933);
+    box-shadow: 0 0 5px 1px #3750b255;
   }
 
   .about-valery h1 {
