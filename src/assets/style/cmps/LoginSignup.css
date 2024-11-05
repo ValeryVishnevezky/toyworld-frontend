@@ -5,15 +5,36 @@
   align-items: center;
   justify-content: center;
   letter-spacing: 0.05rem;
-  margin-top: 80px;
+  margin-top: 50px;
+  gap: 20px;
 }
 
-.login-page a {
+.login-page-signup-btn {
   color: #131c3f;
   font-weight: 500;
   font-size: 1.1rem;
 }
 
-.login-page a:hover {
+.login-page-signup-btn:hover {
   color: #fdb742;
+}
+
+.login-page-btn {
+  align-self: start;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  background-color: #374fb2;
+}
+
+.login-page-btn:hover {
+  color: #131c3f;
+  background-color: #01337569;
 }

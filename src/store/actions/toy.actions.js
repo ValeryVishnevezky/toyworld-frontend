@@ -36,8 +36,8 @@ function removeToy(toyId) {
       })
 }
 
-function setFilterBy(filterBy) {
-    store.dispatch({ type: SET_FILTER_BY, filterBy })
+function setFilterBy(filterBy = toyService.getDefaultFilter()) {
+  store.dispatch({ type: SET_FILTER_BY, filterBy })
 }
 
 export function saveToy(toy) {

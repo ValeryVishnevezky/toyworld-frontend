@@ -11,7 +11,7 @@
   color: #131c3f;
 }
 
-.toy-filter-inputs-btn {
+.toy-filter-inputs {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,13 +25,14 @@
   font-weight: 400;
   color: white;
   background-color: #fdb742;
+  white-space: nowrap;
 }
 
 .toy-filter-btn:hover {
   background-color: #002476;
 }
 
-.toy-filter-inputs-btn select {
+.toy-filter-inputs select {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -41,4 +42,22 @@
   border: 1px solid #3750b255;
   border-radius: 0.2rem;
   background-color: white;
+  width: 200px;
+}
+
+.toy-filter-inputs-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 40px;
+}
+
+.toy-filter-inputs-checkboxes {
+  /* width: 200px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: left; */
 }

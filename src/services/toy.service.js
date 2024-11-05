@@ -13,7 +13,6 @@ const labels = [
     'Battery Powered',
 ]
 
-
 export const toyService = {
     query,
     getById,
@@ -42,9 +41,8 @@ function save(toy) {
 }
 
 function getDefaultFilter() {
-    return { title: '', maxPrice: '', labels: '', inStock: '' }
+    return { title: '', maxPrice: '', labels: [], inStock: null }
 }
-
 
 function getEmptyToy() {
     return {

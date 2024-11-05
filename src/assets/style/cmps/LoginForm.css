@@ -1,14 +1,10 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: normal;
   width: 40%;
   min-width: 300px;
   max-width: 500px;
+  margin-top: 50px;
 }
 
 .login-form input {
@@ -25,9 +21,10 @@
   align-self: end;
   cursor: pointer;
   padding: 6px 10px;
+  font-size: 1.1rem;
+  font-weight: 400;
   border: none;
   border-radius: 0.2rem;
-  font-size: 1.1rem;
   color: white;
   background-color: #fdb742;
   margin-bottom: 20px;

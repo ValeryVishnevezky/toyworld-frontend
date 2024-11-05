@@ -16,34 +16,34 @@ const initialState = {
 }
 
 export function toyReducer(state = initialState, action = {}) {
+    let toys
     switch (action.type) {
         case SET_TOYS:
             return { ...state, toys: action.toys }
+
         case REMOVE_TOY:
-            const lastToys = [...state.toys]
-            return {
-                ...state,
-                toys: state.toys.filter(toy => toy._id !== action.toyId),
-                lastToys
-            }
+            toys = state.toys.filter(toy => toy._id !== action.toyId)
+            return { ...state, toys, lastToys: state.toys }
+
         case ADD_TOY:
             return {
                 ...state,
                 toys: [...state.toys, action.toy]
             }
+
         case UPDATE_TOY:
             return {
                 ...state,
                 toys: state.toys.map(toy => toy._id === action.toy._id ? action.toy : toy)
             }
+
         case UNDO_TOY:
             return { ...state, toys: [...state.lastToys] }
 
         case SET_FILTER_BY:
-            return {
-                ...state,
-                filterBy: { ...state.filterBy, ...action.filterBy }
-            }
+            const filterBy = { ...state.filterBy, ...action.filterBy }
+            return { ...state, filterBy }
+
         case SET_IS_LOADING:
             return {
                 ...state,

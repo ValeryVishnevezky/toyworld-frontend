@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js";
 import { login, signup } from "../store/actions/user.actions.js";
 import { LoginForm } from "../cmps/LoginForm.jsx";
-import { useNavigate } from "react-router-dom";
 
 export function LoginSignup() {
   const navigate = useNavigate();
@@ -36,9 +36,12 @@ export function LoginSignup() {
 
   return (
     <div className="login-page">
+      <button className="login-page-btn">
+        <Link to="/toy">Back</Link>
+      </button>
       <LoginForm onLogin={onLogin} isSignup={isSignup} />
       <div className="btns">
-        <a href="#" onClick={() => setIsSignUp(!isSignup)}>
+        <a className="login-page-signup-btn" href="#" onClick={() => setIsSignUp(!isSignup)}>
           {isSignup ? "Already a member? Login" : `New user? Signup here`}
         </a>
       </div>

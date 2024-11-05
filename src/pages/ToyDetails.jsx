@@ -42,7 +42,7 @@ export function ToyDetails() {
         Toy inStock: <span>{toy.inStock ? 'yes' : 'no'}</span>
       </h1>
       <h1>
-        Labels: <span>{toy.labels.join(' ,')}</span>
+        Labels: <span>{toy.labels.join(', ')}</span>
       </h1>
       <h1 className={toy.inStock ? 'green' : 'red'}>
         {toy.inStock ? 'In stock' : 'Not in stock'}
