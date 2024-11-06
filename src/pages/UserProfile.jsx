@@ -9,7 +9,7 @@ import { saveUser } from "../store/actions/user.actions.js";
 
 export function UserProfile() {
   const navigate = useNavigate();
-  const user = useSelector((storeState) => storeState.userModule.loggedInUser);
+  const user = useSelector((storeState) => storeState.userModule.loggedinUser);
   const [isEditing, setIsEditing] = useState(false);
 
   function onLogout() {
@@ -42,6 +42,7 @@ export function UserProfile() {
   function onCancel(ev) {
     ev.preventDefault();
     setIsEditing(false);
+    showSuccessMsg("Cancel user update");
   }
 
   return (
@@ -74,11 +75,11 @@ export function UserProfile() {
                 </div>
               )}
               <div className="user-profile-btns">
-                <button className="user-profile-logout" onClick={onLogout}>
-                  Logout
-                </button>
                 <button className="user-profile-edit" onClick={onEdit}>
                   Edit
+                </button>
+                <button className="user-profile-logout" onClick={onLogout}>
+                  Logout
                 </button>
               </div>
             </section>

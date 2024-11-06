@@ -12,7 +12,7 @@ export function ToyIndex() {
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const isLoading = useSelector(storeState => storeState.toyModule.isLoading)
-    const user = useSelector((storeState) => storeState.userModule.loggedInUser)
+    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     useEffect(() => {
         toyAction.loadToys()

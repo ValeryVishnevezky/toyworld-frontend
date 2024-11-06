@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 export function AppHeader() {
   const navigate = useNavigate();
-  const user = useSelector((storeState) => storeState.userModule.loggedInUser);
+  const user = useSelector((storeState) => storeState.userModule.loggedinUser);
 
   function onLogout() {
     logout()
